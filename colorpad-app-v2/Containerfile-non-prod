@@ -1,0 +1,6 @@
+FROM ubi8/nodejs-14
+MAINTAINER Aly Ibrahim<aly.ibrahim@gmail.com>
+#ADD *.json *.js  src e2e .
+ADD ./ .
+RUN npm install
+ENTRYPOINT ["ng", "serve", "--host", "0.0.0.0", "--port", "8080", "--disable-host-check"]

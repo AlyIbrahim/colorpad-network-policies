@@ -1,0 +1,18 @@
+
+
+<div class='container'>
+    <h4>Select a color to start coloring</h4>
+    <div class='palette'>
+    <div class='color'
+        *ngFor="let color of colors" [ngStyle]="{'background-color' : color}"
+        id={{color}} (click)=colorSelected(color)> <span>{{color}}</span> </div>
+        <!-- <input type="radio" id={{color}} name=color value={{color}}  (change)=colorSelected(color)>
+    <label for={{color}}>{{color}}</label><br> -->
+
+
+
+    <!-- <div class='circle' id={{color}} (click)=colorSelected(color)> <span>{{color}}</span> </div> -->
+    <!-- <div [ngStyle]="{'background-color' : color, 'border-radius': '50%', 'border': '1px solid black', 'height': '100px', 'width': '100px', 'font-size': '1em', 'position': 'relative'}"  -->
+
+    </div>
+</div>

@@ -1,0 +1,17 @@
+FROM ubi8/nodejs-14 as builder
+MAINTAINER Aly Ibrahim<aly.ibrahim@gmail.com>
+#ADD *.json *.js  src e2e .
+ADD ./ .
+RUN npm install
+RUN ng build
+RUN ls
+RUN pwd
+
+FROM ubi8/nginx-118
+MAINTAINER Aly Ibrahim<aly.ibrahim@gmail.com>
+#ADD *.json *.js  src e2e .
+ADD colorpad.conf $NGINX_DEFAULT_CONF_PATH
+COPY --from=builder /opt/app-root/src/dist/colorpad-app/ .
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
+#CMD nginx -g "daemon off;error_log /dev/stdout info;"
+CMD nginx -g "daemon off;"

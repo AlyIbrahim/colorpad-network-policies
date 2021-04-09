@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  annotations:
+  name: allow-ingress-red-colorpad
+spec:
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          project: colorpad
+  podSelector:
+    matchLabels:
+      color: red
+  policyTypes:
+  - Ingress

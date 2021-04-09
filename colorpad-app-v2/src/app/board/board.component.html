@@ -1,0 +1,32 @@
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    table {
+        width: 100%
+    }
+</style>
+
+<div class="container">
+
+    <div class="title">
+        <h4>Click on any of the squares to color it with the selected color</h4>
+
+        <div class="controls">
+            <div><button (click)="speedUp()">Faster</button><button (click)="randomize()">Randomize</button><button
+                    (click)="speedDown()">Slower</button></div>
+            <div><button (click)="resetRandom()">Stop</button><button (click)="reset()">Reset</button></div>
+        </div>
+    </div>
+
+    <div class="board">
+        <app-square *ngFor="let val of squares; let i = index" [buttonColor]="val" [value]="val"
+            (click)="changeColor(i, selectedColor)">
+        </app-square>
+    </div>
+
+</div>

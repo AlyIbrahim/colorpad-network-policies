@@ -1,0 +1,12 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-http
+spec:
+  podSelector:
+    matchLabels:
+      app: colorpad
+  ingress:
+  - ports:
+    - protocol: TCP
+      port: 8080

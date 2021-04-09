@@ -1,0 +1,33 @@
+{
+    "/confirm/orange/*": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {"^/confirm/orange" : "/confirm"}
+    },
+    "/confirm/green/*": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {"^/confirm/green" : "/confirm"}
+    },
+    "/confirm/red/*": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {"^/confirm/red" : "/confirm"}
+    },
+    "/confirm/blue/*": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {"^/confirm/blue" : "/confirm"}
+    },
+    "/confirm/purple/*": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {"^/confirm/purple" : "/confirm"}
+    }
+}
