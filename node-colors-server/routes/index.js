@@ -24,7 +24,7 @@ router.post('/confirm', function(req, res, next) {
     console.log(counter_url)
     request.post({headers:{"Accept": "text/plain"},url: counter_url, body: inbody, json:true}, (err, res, body) => {
       if(err){
-        console.log("Error counting " + res.statusCode)
+        console.log("Error counting")
         return
       }
       else if (res.statusCode == 404){
